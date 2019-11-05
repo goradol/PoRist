@@ -17,6 +17,7 @@ class _Page1State extends State<Page1> {
   @override
   void initState() {
     super.initState();
+    readAllData();
     //Future<String> test = xxx();
   }
 
@@ -32,8 +33,7 @@ class _Page1State extends State<Page1> {
     for (var map in result) {
       pageholdermodel holdermodel = pageholdermodel.fromJson(map);
       String title = holdermodel.title;
-      print(
-          'title===============================================================$title');
+      print('title=============================================================== $title');
 
       setState(() {
         pageHolderModels.add(holdermodel);
