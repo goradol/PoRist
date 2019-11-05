@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:barcode_scan/barcode_scan.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
+import 'package:porist2/screens/my_alert.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -42,6 +43,11 @@ Future<void> getUserWhereResultCode()async{
   //print('respond = $response');
   var result = json.decode(response.body);
   print('result ======================================================== $result');
+  if (result.toString() == 'null') {
+    normalDialog('ตรวจพบข้อผิดพลาด', 'ไม่มี $resultCode ใน Database', context);
+  } else {
+
+  }
 }
 
 
